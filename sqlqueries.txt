@@ -1,0 +1,25 @@
+username: root
+password: password
+
+CREATE DATABASE sampledatabase;
+
+CREATE TABLE Persons (
+    personID int,
+    name varchar(255),
+    age varchar(255),
+    location varchar(255)
+);
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+INSERT INTO Persons(personID,name,age,location) VALUES (101,"Nagendra","30","Tirupathi");
+
+SELECT * FROM sampledatabase.persons;
+
+SELECT * FROM sampledatabase.persons sp where sp.personID = 101;
+
+SET SQL_SAFE_UPDATES = 0;
+UPDATE sampledatabase.persons sp SET sp.age = 29 where sp.personID = 101;
+
+
+
